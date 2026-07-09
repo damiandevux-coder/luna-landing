@@ -6,301 +6,412 @@
   <title>Luna — The AI Product Owner for teams that ship</title>
   <meta name="description" content="Luna joins your standups, grooms your backlog, flags blockers before they kill sprints — and writes the briefs your stakeholders actually read.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
-      <div class="logo">
+      <a href="#" class="logo">
         <span class="logo-icon">🌙</span>
-        <span class="logo-text">Luna</span>
-      </div>
+        <span class="logo-text">luna</span>
+      </a>
       <div class="nav-links">
-        <a href="#vs">Why Luna</a>
-        <a href="#roles">Use cases</a>
+        <a href="#features">Why Luna</a>
+        <a href="#comparison">Compare</a>
+        <a href="#how-it-works">How it works</a>
         <a href="#pricing">Pricing</a>
       </div>
-      <a href="#deploy" class="btn btn-small btn-primary">Add to Slack</a>
+      <a href="#cta" class="btn btn-primary btn-small">Start free</a>
     </div>
   </nav>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        Now in public beta
-      </div>
-      <h1 class="hero-title">
-        Your Product Owner<br>
-        who <span class="gradient">never sleeps</span>
-      </h1>
-      <p class="hero-subtitle">
-        Luna lives in Slack, reads Linear, and watches GitHub. She grooms your backlog daily,
-        flags blockers before they spiral, and writes sprint briefs your stakeholders actually read.
-      </p>
-      <div class="hero-ctas">
-        <a href="#deploy" class="btn btn-primary btn-large">Add Luna to Slack — Free</a>
-        <a href="#demo" class="btn btn-secondary btn-large">See a standup report</a>
-      </div>
-      <div class="hero-trust">
-        <div class="trust-badges">
-          <span class="trust-badge">✓ $0 to start</span>
-          <span class="trust-badge">✓ No credit card</span>
-          <span class="trust-badge">✓ 14-day trial</span>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Now in public beta
         </div>
-        <p class="trust-text">Trusted by product teams at HyperCLI, Engage The Crowd, and 200+ startups</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="demo" id="demo">
-    <div class="demo-inner">
-      <div class="demo-header">
-        <span class="demo-label">LIVE IN YOUR SLACK EVERY MORNING</span>
-        <h2>This is what your team wakes up to</h2>
-      </div>
-      <div class="slack-mockup">
-        <div class="slack-header">
-          <div class="slack-channel">#product-updates</div>
-          <div class="slack-time">9:00 AM</div>
+        <h1 class="hero-title">
+          Not a tool.<br>A hire.
+        </h1>
+        <p class="hero-subtitle">
+          Hire Luna and run your product team like it's 2x the size. The AI Product Owner that lives in Slack.
+        </p>
+        <div class="hero-ctas">
+          <a href="#cta" class="btn btn-primary btn-large">Get Started for Free</a>
+          <a href="#demo" class="btn btn-secondary btn-large">See a standup report</a>
         </div>
-        <div class="slack-message">
-          <div class="slack-avatar">🌙</div>
-          <div class="slack-content">
-            <div class="slack-name">Luna <span class="slack-bot">APP</span></div>
-            <div class="slack-text">
-              <p><strong>Good morning, team.</strong> Here's your daily brief:</p>
-              <div class="brief-section">
-                <div class="brief-title">🚨 3 Blockers</div>
-                <div class="brief-item">
-                  <span class="brief-tag urgent">URGENT</span>
-                  HYP-142 — Auth redirect on iOS (4 days stale, @dmitry)
+        <div class="hero-trust">
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>$0 to start</span>
+          </div>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>No credit card</span>
+          </div>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>SOC 2 compliant</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="slack-preview">
+          <div class="slack-tabs">
+            <button class="slack-tab" data-tab="slack">Slack</button>
+            <button class="slack-tab active" data-tab="discord">Discord</button>
+          </div>
+          <div class="slack-window" id="slack-window">
+            <div class="slack-channel-bar">
+              <span class="slack-hash">#</span> product-updates
+            </div>
+            <div class="slack-message">
+              <div class="slack-avatar">👩‍💼</div>
+              <div class="slack-msg-content">
+                <div class="slack-msg-header">
+                  <span class="slack-name">Sarah Chen</span>
+                  <span class="slack-time">8:45 AM</span>
                 </div>
-                <div class="brief-item">
-                  <span class="brief-tag waiting">WAITING</span>
-                  HYP-156 — Design review pending (@francisco)
+                <p>@Luna pull the sprint numbers and flag anything blocked</p>
+              </div>
+            </div>
+            <div class="slack-message">
+              <div class="slack-avatar luna">🌙</div>
+              <div class="slack-msg-content">
+                <div class="slack-msg-header">
+                  <span class="slack-name luna-name">Luna</span>
+                  <span class="slack-app">App</span>
+                  <span class="slack-time">8:46 AM</span>
                 </div>
-                <div class="brief-item">
-                  <span class="brief-tag risk">AT RISK</span>
-                  HYP-161 — Scope grew 40%, needs escalation
+                <div class="slack-body">
+                  <p><strong>On it.</strong> Pulling from Linear, GitHub, and CI...</p>
+                  <div class="slack-apps">
+                    <span class="app-badge">📊 Linear</span>
+                    <span class="app-badge">🐙 GitHub</span>
+                    <span class="app-badge">🔄 CI</span>
+                  </div>
                 </div>
               </div>
-              <div class="brief-section">
-                <div class="brief-title">✅ Ready for Sprint</div>
-                <div class="brief-item">8 tickets groomed and RICE-scored</div>
-              </div>
-              <div class="brief-section">
-                <div class="brief-title">📊 Sprint Health</div>
-                <div class="brief-item">Velocity: +12% vs last sprint | Scope: On track | Risk: Low</div>
-              </div>
-              <p class="brief-action">Reply <code>@luna details</code> for full breakdown or <code>@luna escalate 161</code> to draft escalation.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="hero-logos">
+      <p>Trusted by product teams at</p>
+      <div class="logo-row">
+        <span class="company-logo">HyperCLI</span>
+        <span class="company-logo">Engage</span>
+        <span class="company-logo">True Classic</span>
+        <span class="company-logo">Growably</span>
+        <span class="company-logo">CollabED</span>
+      </div>
+    </div>
   </section>
 
-  <section class="vs" id="vs">
-    <div class="vs-inner">
+  <!-- Problem Statement -->
+  <section class="problem">
+    <div class="problem-inner">
+      <h2 class="problem-title">
+        Luna is the Product Owner that does the work you
+        <span class="problem-carousel">
+          <span class="carousel-item active">can't get to.</span>
+          <span class="carousel-item">can't justify hiring for.</span>
+          <span class="carousel-item">shouldn't be doing yourself.</span>
+        </span>
+      </h2>
+      <a href="#cta" class="btn btn-primary">Get Started for Free</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="features-inner">
       <div class="section-header">
-        <span class="section-label">WHY LUNA</span>
-        <h2>You've tried the tools. The PM work is still there.</h2>
+        <span class="section-eyebrow">Why it feels like a hire</span>
+        <h2>Four things that make Luna a hire</h2>
       </div>
-      <div class="vs-table">
-        <div class="vs-row vs-header">
-          <div class="vs-task">The work</div>
-          <div class="vs-tool">What you do now</div>
-          <div class="vs-luna">What Luna does</div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-preview">
+            <div class="mini-slack">
+              <div class="mini-msg">
+                <div class="mini-avatar luna">🌙</div>
+                <div class="mini-content">
+                  <div class="mini-header"><span class="mini-name">Luna</span><span class="mini-app">App</span></div>
+                  <p>Done. The brief's in the channel.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>Real output, not just text</h3>
+            <p>Luna hands you the groomed backlog, the sprint brief, or the escalation draft. Not a wall of suggestions.</p>
+          </div>
         </div>
-        <div class="vs-row">
-          <div class="vs-task">Standup prep</div>
-          <div class="vs-tool">You open Linear, scan tickets, check Slack, write notes. 30 minutes.</div>
-          <div class="vs-luna">She reads everything overnight and posts the brief by 9am. You just read it.</div>
+        <div class="feature-card">
+          <div class="feature-preview">
+            <div class="mini-slack">
+              <div class="mini-msg">
+                <div class="mini-avatar luna">🌙</div>
+                <div class="mini-content">
+                  <div class="mini-header"><span class="mini-name">Luna</span><span class="mini-app">App</span></div>
+                  <p>Pulled it from Linear, GitHub, and CI in one pass.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>One message, your whole stack</h3>
+            <p>Linear, GitHub, Slack, and your CI pipeline — connected in a single request. The work that crosses every system.</p>
+          </div>
         </div>
-        <div class="vs-row">
-          <div class="vs-task">Backlog grooming</div>
-          <div class="vs-tool">You RICE-score manually, hunt for missing ACs, find duplicates. 2 hours.</div>
-          <div class="vs-luna">She scores, flags, and moves tickets daily. You review her suggestions in 10 minutes.</div>
+        <div class="feature-card">
+          <div class="feature-preview">
+            <div class="mini-slack">
+              <div class="mini-msg">
+                <div class="mini-avatar luna">🌙</div>
+                <div class="mini-content">
+                  <div class="mini-header"><span class="mini-name">Luna</span><span class="mini-app">App</span></div>
+                  <p>Posted your Monday brief. Same time next week.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>It works on a schedule</h3>
+            <p>Daily standup briefs, weekly sprint reports, all on autopilot. In your channel before you ask.</p>
+          </div>
         </div>
-        <div class="vs-row">
-          <div class="vs-task">Sprint briefs</div>
-          <div class="vs-tool">You copy-paste from Jira, format in Google Docs, chase stakeholders. 3 hours.</div>
-          <div class="vs-luna">She auto-generates PDFs with velocity, risks, and narrative. Stakeholders actually read them.</div>
-        </div>
-        <div class="vs-row">
-          <div class="vs-task">Blocker escalation</div>
-          <div class="vs-tool">You notice a ticket is stalled, chase the owner, draft a message. 1 hour.</div>
-          <div class="vs-luna">She detects stalled work in 4 hours, nudges the owner, drafts the escalation. You just approve.</div>
+        <div class="feature-card">
+          <div class="feature-preview">
+            <div class="mini-slack">
+              <div class="mini-msg">
+                <div class="mini-avatar luna">🌙</div>
+                <div class="mini-content">
+                  <div class="mini-header"><span class="mini-name">Luna</span><span class="mini-app">App</span></div>
+                  <p>Used your usual format. I remembered.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>It learns your company</h3>
+            <p>It remembers your decisions, formats, and preferences — so you never repeat yourself.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="testimonials">
-    <div class="testimonials-inner">
+  <!-- Comparison -->
+  <section class="comparison" id="comparison">
+    <div class="comparison-inner">
       <div class="section-header">
-        <span class="section-label">WHAT TEAMS SAY</span>
-        <h2>Product teams that actually ship</h2>
+        <span class="section-eyebrow">The difference</span>
+        <h2>A chatbot answers. <span class="highlight">Luna delivers.</span></h2>
+        <p class="section-subtitle">Other AI hands you a plan and waits. Luna does the thing and posts the result.</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial">
-          <div class="testimonial-stars">★★★★★</div>
-          <p>"Luna found 14 stale tickets we'd forgotten about. 3 were blocking feature work. We shipped 2 days early."</p>
-          <div class="testimonial-author">
-            <span class="author-name">Sam Heyer</span>
-            <span class="author-role">CEO, Engage The Crowd</span>
+      <div class="comparison-tabs">
+        <button class="comp-tab active" data-tab="standup">
+          <span class="tab-icon">📋</span>
+          Standup Prep
+        </button>
+        <button class="comp-tab" data-tab="grooming">
+          <span class="tab-icon">🧹</span>
+          Backlog Grooming
+        </button>
+        <button class="comp-tab" data-tab="briefs">
+          <span class="tab-icon">📊</span>
+          Sprint Briefs
+        </button>
+        <button class="comp-tab" data-tab="escalation">
+          <span class="tab-icon">🚨</span>
+          Blocker Escalation
+        </button>
+      </div>
+      <div class="comparison-content">
+        <div class="comp-panel active" data-panel="standup">
+          <div class="comp-col comp-them">
+            <h4>The old way</h4>
+            <div class="comp-item">
+              <div class="comp-logo">🤖</div>
+              <div class="comp-desc">
+                <strong>ChatGPT</strong>
+                <span>Tells you how to run a standup</span>
+              </div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">📋</div>
+              <div class="comp-desc">
+                <strong>Notion AI</strong>
+                <span>Summarizes your notes</span>
+              </div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">⚡</div>
+              <div class="comp-desc">
+                <strong>Zapier</strong>
+                <span>Moves data between apps</span>
+              </div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">💬</div>
+              <div class="comp-desc">
+                <strong>Claude</strong>
+                <span>Drafts a message. You send it.</span>
+              </div>
+            </div>
+          </div>
+          <div class="comp-vs">VS</div>
+          <div class="comp-col comp-us">
+            <div class="comp-luna-header">
+              <span class="luna-icon">🌙</span>
+              <strong>Luna</strong>
+            </div>
+            <div class="comp-check">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Reads Linear, GitHub, and CI overnight
+            </div>
+            <div class="comp-check">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Posts the brief to Slack by 9am
+            </div>
+            <div class="comp-check">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Flags blockers with owner and severity
+            </div>
+            <div class="comp-check">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Runs every day. You just read it.
+            </div>
           </div>
         </div>
-        <div class="testimonial">
-          <div class="testimonial-stars">★★★★★</div>
-          <p>"I used to spend Sunday nights prepping for Monday standup. Luna does it by 9am. I got my Sundays back."</p>
-          <div class="testimonial-author">
-            <span class="author-name">Francisco Molina</span>
-            <span class="author-role">Engineering Lead, HyperCLI</span>
+        <div class="comp-panel" data-panel="grooming">
+          <div class="comp-col comp-them">
+            <h4>The old way</h4>
+            <div class="comp-item">
+              <div class="comp-logo">🤖</div>
+              <div class="comp-desc"><strong>ChatGPT</strong><span>Suggests how to prioritize</span></div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">📋</div>
+              <div class="comp-desc"><strong>Notion AI</strong><span>Organizes your docs</span></div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">⚡</div>
+              <div class="comp-desc"><strong>Zapier</strong><span>Auto-moves tickets</span></div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">💬</div>
+              <div class="comp-desc"><strong>Claude</strong><span>Writes descriptions</span></div>
+            </div>
+          </div>
+          <div class="comp-vs">VS</div>
+          <div class="comp-col comp-us">
+            <div class="comp-luna-header"><span class="luna-icon">🌙</span><strong>Luna</strong></div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>RICE-scores every ticket daily</div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Flags stale tickets in 4 hours</div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Writes missing acceptance criteria</div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>You review suggestions in 10 min</div>
           </div>
         </div>
-        <div class="testimonial">
-          <div class="testimonial-stars">★★★★★</div>
-          <p>"Our stakeholders stopped asking 'what's the status?' because Luna's briefs actually answer the question."</p>
-          <div class="testimonial-author">
-            <span class="author-name">Dmitry Nedospasov</span>
-            <span class="author-role">CTO, HyperCLI</span>
+        <div class="comp-panel" data-panel="briefs">
+          <div class="comp-col comp-them">
+            <h4>The old way</h4>
+            <div class="comp-item">
+              <div class="comp-logo">🤖</div>
+              <div class="comp-desc"><strong>ChatGPT</strong><span>Outlines what to include</span></div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">📋</div>
+              <div class="comp-desc"><strong>Notion AI</strong><span>Summarizes your wiki</span></div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">⚡</div>
+              <div class="comp-desc"><strong>Zapier</strong><span>Triggers a template</span></div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">💬</div>
+              <div class="comp-desc"><strong>Claude</strong><span>Drafts paragraphs</span></div>
+            </div>
+          </div>
+          <div class="comp-vs">VS</div>
+          <div class="comp-col comp-us">
+            <div class="comp-luna-header"><span class="luna-icon">🌙</span><strong>Luna</strong></div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Auto-generates the full PDF brief</div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Includes velocity, risk, and narrative</div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Posts to Slack for stakeholders</div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Stakeholders actually read them</div>
+          </div>
+        </div>
+        <div class="comp-panel" data-panel="escalation">
+          <div class="comp-col comp-them">
+            <h4>The old way</h4>
+            <div class="comp-item">
+              <div class="comp-logo">🤖</div>
+              <div class="comp-desc"><strong>ChatGPT</strong><span>Suggests escalation steps</span></div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">📋</div>
+              <div class="comp-desc"><strong>Notion AI</strong><span>Documents the issue</span></div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">⚡</div>
+              <div class="comp-desc"><strong>Zapier</strong><span>Sends a notification</span></div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-logo">💬</div>
+              <div class="comp-desc"><strong>Claude</strong><span>Drafts the message</span></div>
+            </div>
+          </div>
+          <div class="comp-vs">VS</div>
+          <div class="comp-col comp-us">
+            <div class="comp-luna-header"><span class="luna-icon">🌙</span><strong>Luna</strong></div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Detects stalled work in 4 hours</div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nudges the owner automatically</div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Drafts escalation with context</div>
+            <div class="comp-check"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>You just approve and send</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- How It Works -->
   <section class="how-it-works" id="how-it-works">
     <div class="how-inner">
       <div class="section-header">
-        <span class="section-label">HOW IT WORKS</span>
-        <h2>Hire your first AI Product Owner in 60 seconds</h2>
+        <span class="section-eyebrow">How it works</span>
+        <h2>Plug-and-play. Live in two minutes.</h2>
+        <p class="section-subtitle">No setup project. No IT ticket. No training videos.</p>
       </div>
       <div class="steps">
         <div class="step">
-          <div class="step-num">1</div>
-          <h3>Add her to Slack</h3>
-          <p>One-click from the Slack App Directory. No engineering. No setup. She joins your channels instantly.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Connect your tools</h3>
-          <p>OAuth with Linear, GitHub, and whatever you use. 5 minutes. She starts reading your backlog immediately.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>She runs product ops</h3>
-          <p>Daily standup briefs. Weekly sprint reports. Continuous backlog grooming. Blocker escalation. While you sleep.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="roles" id="roles">
-    <div class="roles-inner">
-      <div class="section-header">
-        <span class="section-label">USE CASES</span>
-        <h2>What Luna owns for your team</h2>
-      </div>
-      <div class="roles-grid">
-        <div class="role">
-          <div class="role-icon">🚀</div>
-          <h3>Product Managers</h3>
-          <p>Stop being a Jira janitor. Luna grooms your backlog, writes acceptance criteria, and surfaces what actually needs your attention.</p>
-          <ul>
-            <li>Daily standup briefs delivered to Slack</li>
-            <li>RICE scoring and stale ticket detection</li>
-            <li>Sprint briefs with velocity and risk analysis</li>
-            <li>Stakeholder updates that get read</li>
-          </ul>
-        </div>
-        <div class="role">
-          <div class="role-icon">⚙️</div>
-          <h3>Engineering Leads</h3>
-          <p>Know what's shipping, what's broken, and who's blocked — without chasing people in Slack.</p>
-          <ul>
-            <li>GitHub PR correlation with Linear tickets</li>
-            <li>CI status monitoring and failure alerts</li>
-            <li>Blocker detection and auto-escalation</li>
-            <li>Sprint health dashboards</li>
-          </ul>
-        </div>
-        <div class="role">
-          <div class="role-icon">📈</div>
-          <h3>Founders & CEOs</h3>
-          <p>Get the product pulse without sitting in standups. Luna tells you what matters in 2 minutes.</p>
-          <ul>
-            <li>Weekly executive briefs with KPIs</li>
-            <li>Roadmap risk alerts before they become fires</li>
-            <li>Competitive intelligence and battlecards</li>
-            <li>Team velocity and capacity trends</li>
-          </ul>
-        </div>
-        <div class="role">
-          <div class="role-icon">🎯</div>
-          <h3>Agencies & Consultancies</h3>
-          <p>One Luna per client. She keeps every project's backlog groomed, stakeholders informed, and sprints on track.</p>
-          <ul>
-            <li>Multi-workspace support</li>
-            <li>Per-client briefs and reporting</li>
-            <li>White-label sprint summaries</li>
-            <li>Team capacity planning</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <div class="pricing-inner">
-      <div class="section-header">
-        <span class="section-label">PRICING</span>
-        <h2>Start free. Pay when she saves you time.</h2>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <h3>Starter</h3>
-            <div class="pricing-price">
-              <span class="price">$0</span>
-              <span class="period">/month</span>
-            </div>
-            <p>For solo PMs and small teams</p>
+          <div class="step-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="32" height="24" rx="4" stroke="currentColor" stroke-width="2"/><path d="M16 20h16M16 26h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
-          <ul class="pricing-features">
-            <li>1 workspace</li>
-            <li>Slack + Linear daily digests</li>
-            <li>Basic backlog grooming</li>
-            <li>Community support</li>
-          </ul>
-          <a href="#" class="btn btn-outline">Hire Luna — Free</a>
-        </div>
-        <div class="pricing-card featured">
-          <div class="pricing-badge">Most popular</div>
-          <div class="pricing-header">
-            <h3>Pro</h3>
-            <div class="pricing-price">
+          <h3>Add to Slack</h3>
               <span class="price">$49</span>
               <span class="period">/user/mo</span>
             </div>
             <p>For teams that ship every week</p>
           </div>
           <ul class="pricing-features">
-            <li>Unlimited workspaces</li>
-            <li>GitHub + CI integration</li>
-            <li>Auto-generated sprint briefs</li>
-            <li>Competitive intelligence</li>
-            <li>Custom skills</li>
-            <li>Priority support</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited workspaces</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>GitHub + CI integration</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Auto-generated sprint briefs</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Competitive intelligence</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom skills</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority support</li>
           </ul>
-          <div class="pricing-quote">
-            "Luna saves our PM 6 hours a week. She pays for herself in a day."
-          </div>
+          <div class="pricing-quote">"Luna saves our PM 6 hours a week. She pays for herself in a day."</div>
           <a href="#" class="btn btn-primary">Start 14-Day Free Trial</a>
         </div>
         <div class="pricing-card">
@@ -313,11 +424,11 @@
             <p>For orgs that need Luna everywhere</p>
           </div>
           <ul class="pricing-features">
-            <li>SSO/SAML</li>
-            <li>Audit logs & SOC 2</li>
-            <li>Custom adapters (Jira, Azure, etc.)</li>
-            <li>Dedicated onboarding</li>
-            <li>99.9% SLA</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>SSO/SAML</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Audit logs & SOC 2</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom adapters (Jira, Azure, etc.)</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated onboarding</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>99.9% SLA</li>
           </ul>
           <a href="#" class="btn btn-outline">Contact Sales</a>
         </div>
@@ -325,64 +436,120 @@
     </div>
   </section>
 
+  <!-- FAQ -->
   <section class="faq">
     <div class="faq-inner">
       <div class="section-header">
-        <span class="section-label">FAQ</span>
+        <span class="section-eyebrow">FAQ</span>
         <h2>Questions you probably have</h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item">
-          <h3>What is Luna, exactly?</h3>
+        <details class="faq-item">
+          <summary>What is Luna, exactly?</summary>
           <p>Luna is an AI Product Owner that lives in Slack. She reads your Linear backlog, watches your GitHub repos, and posts daily briefs with what's blocked, what's ready, and what needs your attention. She also grooms your backlog, writes sprint briefs, and escalates blockers.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How is Luna different from ChatGPT or Copilot?</h3>
+        </details>
+        <details class="faq-item">
+          <summary>How is Luna different from ChatGPT or Copilot?</summary>
           <p>ChatGPT answers questions. Luna does the work. She doesn't just tell you what's blocked — she posts it to Slack, suggests fixes, drafts escalation messages, and tracks until it's resolved. She doesn't summarize your meetings — she prevents the problems that make meetings necessary.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What tools does Luna connect to?</h3>
+        </details>
+        <details class="faq-item">
+          <summary>What tools does Luna connect to?</summary>
           <p>Linear, Slack, and GitHub out of the box. Jira, Asana, Monday.com, and Azure DevOps on Pro and Enterprise. If your tool isn't supported, we build custom adapters.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Is my data secure?</h3>
+        </details>
+        <details class="faq-item">
+          <summary>Is my data secure?</summary>
           <p>Yes. Luna only reads the channels and repos you give her access to. Your data is encrypted in transit and at rest. We don't train on your data. SOC 2 Type II certified.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can Luna make mistakes?</h3>
+        </details>
+        <details class="faq-item">
+          <summary>Can Luna make mistakes?</summary>
           <p>Luna is capable, not infallible. She double-checks her work and asks for confirmation before high-stakes actions like moving tickets to Done or escalating to executives. You stay in control.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What if I want to stop using Luna?</h3>
+        </details>
+        <details class="faq-item">
+          <summary>What if I want to stop using Luna?</summary>
           <p>Remove her from Slack. That's it. No lock-in, no data hostage. Your backlog stays in Linear, your repos stay in GitHub. Luna just stops posting.</p>
-        </div>
+        </details>
       </div>
     </div>
   </section>
 
-  <section class="cta" id="deploy">
+  <!-- CTA -->
+  <section class="cta" id="cta">
     <div class="cta-inner">
-      <h2>Your Product Owner starts Monday</h2>
-      <p>One Slack invite. No credit card. 14 days free.</p>
-      <a href="#" class="btn btn-primary btn-large">Add Luna to Slack — Free</a>
+      <h2>Start free. Pay only when you're ready.</h2>
+      <p>Every feature. Every integration. 14 days on the house. No credit card, no sales call, no catch.</p>
+      <a href="#" class="btn btn-primary btn-large">Get Started For Free</a>
       <p class="cta-note">Used by 200+ teams. No setup required. Cancel anytime.</p>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo-icon">🌙</span>
-        <span>Luna</span>
+      <div class="footer-left">
+        <div class="footer-brand">
+          <span class="logo-icon">🌙</span>
+          <span>luna</span>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="GitHub">⚡</a>
+        </div>
+        <p class="footer-copy">© 2026 Luna. Built by HyperCLI.</p>
       </div>
       <div class="footer-links">
-        <a href="#">Documentation</a>
-        <a href="#">GitHub</a>
-        <a href="#">Slack community</a>
-        <a href="#">Status</a>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#">Security</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compare</h4>
+          <a href="#">vs ChatGPT</a>
+          <a href="#">vs Notion AI</a>
+          <a href="#">vs Zapier</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#">Documentation</a>
+          <a href="#">GitHub</a>
+          <a href="#">Slack Community</a>
+          <a href="#">Status</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
       </div>
-      <p class="footer-copy">© 2026 Luna. Built by HyperCLI.</p>
     </div>
   </footer>
+
+  <script>
+    // Carousel animation
+    const items = document.querySelectorAll('.carousel-item');
+    let current = 0;
+    setInterval(() => {
+      items[current].classList.remove('active');
+      current = (current + 1) % items.length;
+      items[current].classList.add('active');
+    }, 3000);
+
+    // Comparison tabs
+    document.querySelectorAll('.comp-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        document.querySelectorAll('.comp-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelectorAll('.comp-panel').forEach(p => {
+          p.classList.toggle('active', p.dataset.panel === target);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
