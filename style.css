@@ -99,6 +99,9 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700}
 .btn-large{padding:16px 32px;font-size:16px}
 .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--line-strong);padding:13px 26px;width:100%}
 .btn-outline:hover{border-color:var(--violet-400);color:var(--violet-700);background:var(--violet-50)}
+.btn-slack{background:#2EB67D;color:#fff;padding:13px 26px;box-shadow:var(--sh-sm)}
+.btn-slack:hover{background:#259d6a;transform:translateY(-2px);box-shadow:var(--sh-md)}
+.btn-slack:active{transform:translateY(0)}
 
 /* ============================================================
    Nav
